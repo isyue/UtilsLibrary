@@ -1,3 +1,4 @@
+# [详细请转移至Wiki文档](https://gitee.com/xmqian/UtilsLibrary/wikis/Home)
 #### app——APP相关
 - AppConfig  
 获取App中的一些主要信息
