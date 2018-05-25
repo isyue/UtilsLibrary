@@ -22,7 +22,7 @@ ViewPager的父Adapter类
 - **DataCleanUtil**
 - **[DensityUtil——屏幕密度单位转换](https://gitee.com/xmqian/UtilsLibrary/wikis/DensityUtil?parent=utils)**
 - **DialogUtil**
-- **LogUtils**
+- **[LogX——日志打印](https://gitee.com/xmqian/UtilsLibrary/wikis/LogX?parent=utils)**
 - **MD5**
 - **NetWorkHelper**
 - **[PhoneScreenInfoUtils——获取手机屏幕信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneScreenInfoUtils?parent=utils)**

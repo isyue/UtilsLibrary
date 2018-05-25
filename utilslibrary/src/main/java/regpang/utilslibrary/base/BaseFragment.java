@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import regpang.utilslibrary.R;
 import regpang.utilslibrary.utils.DialogUtils;
-import regpang.utilslibrary.utils.LogUtils;
+import regpang.utilslibrary.utils.LogX;
 
 
 /**
@@ -26,7 +26,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         dialogUtils = new DialogUtils(getActivity(), getActivity().getString(R.string.dialog_request_data));
         view = getView();
-        LogUtils.e("view","view");
+        LogX.e("view","view");
         return view;
     }
 

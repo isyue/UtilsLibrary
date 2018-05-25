@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import regpang.utilslibrary.utils.LogUtils;
+import regpang.utilslibrary.utils.LogX;
 
 
 /**
@@ -65,11 +65,11 @@ public abstract class LasyFragment extends Fragment implements View.OnClickListe
 
     protected void onVisible() {
         lasyLoad();
-        LogUtils.e("LasyFragment", "状态为可见");
+        LogX.e("LasyFragment", "状态为可见");
     }
 
     protected void  onInvisible() {
-        LogUtils.e("LasyFragment", "状态为不可见");
+        LogX.e("LasyFragment", "状态为不可见");
     }
 
     public void lasyLoad() {
