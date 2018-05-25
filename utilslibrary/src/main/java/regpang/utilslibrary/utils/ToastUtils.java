@@ -10,7 +10,7 @@ import android.widget.Toast;
  */
 public class ToastUtils {
 
-    private static Application mContext;
+    private static Context mContext;
 
     private static Toast toast;
 
@@ -22,7 +22,7 @@ public class ToastUtils {
 
     /**
      * 短时间显示吐司，并且重复点击上一层吐司消失
-     *
+     *  需要先在App中调用init()
      * @param msg
      */
     public static void showMsg(String msg) {
@@ -42,13 +42,13 @@ public class ToastUtils {
      * @param msg
      */
     public static void showMsg(Context context, String msg) {
-        mContext = (Application) context;
+        mContext = context;
         showMsg(msg);
     }
 
     /**
      * 显示长吐司，并重复点击消失上一层吐司
-     *
+     *需要先在App中调用init()
      * @param msg
      */
     public static void showLongMsg(String msg) {
@@ -67,7 +67,7 @@ public class ToastUtils {
      * @param msg
      */
     public static void showLongMsg(Context context, String msg) {
-        mContext = (Application) context;
+        mContext = context;
         showLongMsg(msg);
     }
 
