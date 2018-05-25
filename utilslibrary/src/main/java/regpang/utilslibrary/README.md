@@ -25,7 +25,7 @@ ViewPager的父Adapter类
 - **LogUtils**
 - **MD5**
 - **NetWorkHelper**
-- **[PhoneInfoUtils——获取手机信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneInfoUtils?parent=utils)**
+- **[PhoneScreenInfoUtils——获取手机屏幕信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneScreenInfoUtils?parent=utils)**
 - **PreferenceHelper**
 - **SharePreUtil**
 - **StringUtils**
