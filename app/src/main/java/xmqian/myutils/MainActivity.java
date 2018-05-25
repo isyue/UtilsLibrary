@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import xmqian.myutils.simple.DensitySimpleActivity;
+import xmqian.myutils.simple.PhoneInfoActivity;
 import xmqian.myutils.simple.ToastActivity;
 
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void addActivity() {
         activitys.add(ToastActivity.class);
         activitys.add(DensitySimpleActivity.class);
+        activitys.add(PhoneInfoActivity.class);
     }
 
     private void goActivity(Class activity) {

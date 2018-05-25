@@ -3,5 +3,6 @@
     <string-array name="item_name">
         <item>Toast测试</item>
         <item>屏幕密度单位转换</item>
+        <item>展示手机信息</item>
     </string-array>
 </resources>

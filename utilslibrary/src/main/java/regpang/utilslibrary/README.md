@@ -15,22 +15,22 @@ ViewPager的父Adapter类
 #### callback——常用接口
 · **NewWorkCallBack**
 
-#### [utils——常用工具类](https://gitee.com/xmqian/UtilsLibrary/wikis/ToastUtils?parent=utils)
+#### utils——常用工具类
 - **AppUtils**
 - **CacheUtils**
 - **DataCacheManager**
 - **DataCleanUtil**
-- **DensityUtil**
+- **[DensityUtil——屏幕密度单位转换](https://gitee.com/xmqian/UtilsLibrary/wikis/DensityUtil?parent=utils)**
 - **DialogUtil**
 - **LogUtils**
 - **MD5**
 - **NetWorkHelper**
-- **PhoneInfoUtils**
+- **[PhoneInfoUtils——获取手机信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneInfoUtils?parent=utils)**
 - **PreferenceHelper**
 - **SharePreUtil**
 - **StringUtils**
 - **TimeUtils**
-- **ToastUtils**
+- **[ToastUtils——Toast提示](https://gitee.com/xmqian/UtilsLibrary/wikis/ToastUtils?parent=utils)**
 - **UpdateManager**
 
 #### view——自定义View

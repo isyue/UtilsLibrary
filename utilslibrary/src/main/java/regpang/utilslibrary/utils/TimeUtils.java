@@ -36,6 +36,13 @@ public class TimeUtils {
                 .format(new Date());
     }
 
+    public static String formatTime(long time) {
+        time /= 1000;
+        long minute = time / 60;
+        long second = time % 60;
+        return String.format("%02d:%02d", minute, second);
+    }
+
     /**
      * 获取时间格式 年/月、日
      *

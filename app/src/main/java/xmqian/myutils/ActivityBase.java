@@ -10,15 +10,11 @@ import regpang.utilslibrary.base.BaseActivity;
  * @date 2018/5/25
  * @desc
  */
-public class ActivityBase extends BaseActivity {
+public abstract class ActivityBase extends BaseActivity {
     @Override
-    protected void setWantShowContentView(Bundle savedInstanceState) {
-    }
-
+    protected abstract void setWantShowContentView(Bundle savedInstanceState);
     @Override
-    protected void initView() {
-
-    }
+    protected abstract void initView();
 
     @Override
     protected void onDestroy() {
