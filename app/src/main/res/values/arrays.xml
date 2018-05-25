@@ -2,5 +2,6 @@
 <resources>
     <string-array name="item_name">
         <item>Toast测试</item>
+        <item>屏幕密度单位转换</item>
     </string-array>
 </resources>

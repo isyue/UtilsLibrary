@@ -17,101 +17,22 @@ import regpang.utilslibrary.utils.DialogUtils;
 public abstract class BaseActivity extends AppCompatActivity {
     protected boolean isFrist = true;//判断数据是否第一次加载
     private String title;
-   protected TextView toolbarTitle;
-    protected ImageButton ibtnRight;
-    protected TextView tvRight;
-    protected Toolbar toolbar;
-    protected DialogUtils dialogUtils;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setWantShowContentView();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setWantShowContentView(savedInstanceState);
         //setNavigationIcon需要放在 setSupportActionBar之后才会生效。
         //检查网络
-
-        if (dialogUtils == null) {
-            dialogUtils = new DialogUtils(this, getString(R.string.dialog_request_data));
-        }
-        findId();
         initView();
         initListener();
     }
 
     /**
-     * 隐藏右边图标
-     */
-    protected void hideRightImgStatee() {
-        ibtnRight.setVisibility(View.GONE);
-    }
-
-    /**
-     * 显示右边图标
-     *
-     * @param imageResourceID
-     */
-    protected void showRightImgStatee(int imageResourceID) {
-        ibtnRight.setVisibility(View.VISIBLE);
-        ibtnRight.setImageResource(imageResourceID);
-    }
-   public void changeRightImg(int imageResourceID){
-       showRightImgStatee(imageResourceID);
-   }
-    public void changeRightTv(String subtitle){
-
-      showRightTextState(subtitle);
-  }
-    /**
-     * 改变标题名称
-     *
-     * @param title
-     */
-    public void changeTitle(String title) {
-        toolbarTitle.setText(title);
-
-    }
-public void showToobar(){
-    showLeftImgState();
-}
-    /**
-     * 隐藏右边文字
-     *
-     */
-    protected void hideRightTextStatee() {
-        tvRight.setVisibility(View.GONE);
-    }
-
-    /**
-     * 显示右边文字
-     *
-     * @param subtitle
-     */
-    protected void showRightTextState(String subtitle) {
-        tvRight.setVisibility(View.VISIBLE);
-        tvRight.setText(subtitle);
-
-    }
-
-    /**
-     * 隐藏返回键
-     */
-    protected void hideLeftImgState() {
-        toolbar.setNavigationIcon(null);
-    }
-   //显示返回键
-    protected void showLeftImgState(){
-    }
-    /**
      * 关联布局文件，设置标题
      */
-    protected abstract void setWantShowContentView();
-
-    /**
-     * 找id
-     */
-    protected abstract void findId();
+    protected abstract void setWantShowContentView(Bundle savedInstanceState);
 
     /**
      * 初始化视图显示
@@ -125,12 +46,8 @@ public void showToobar(){
     }
 
 
-    public void setToolbarTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
-    }
-
-    protected Toolbar getToolbar() {
-        return toolbar;
     }
 
     /**

@@ -37,4 +37,10 @@ public class ToastActivity extends AppCompatActivity {
         /*需要注册全局Context*/
         ToastUtils.showLongMsg("显示长时间显示"+index +"次");
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 }
