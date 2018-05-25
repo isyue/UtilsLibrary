@@ -20,9 +20,9 @@
 
 #### 使用说明
 
-1. [java代码工具路径](https://gitee.com/xmqian/UtilsLibrary/tree/master/src/main/java/regpang/utilslibrary)
-2. [XML布局路径](https://gitee.com/xmqian/UtilsLibrary/tree/master/src/main/res/layout)
-3. [Drawable资源路径](https://gitee.com/xmqian/UtilsLibrary/tree/master/src/main/res/drawable)
+1. [java代码工具路径](https://gitee.com/xmqian/UtilsLibrary/tree/master/utilslibrary/src/main/java/regpang/utilslibrary)
+2. [XML布局路径](https://gitee.com/xmqian/UtilsLibrary/tree/master/utilslibrary/src/main/res/layout)
+3. [Drawable资源路径](https://gitee.com/xmqian/UtilsLibrary/tree/master/utilslibrary/src/main/res/drawable)
 
 #### 参与贡献
 
