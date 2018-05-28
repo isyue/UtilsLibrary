@@ -227,6 +227,18 @@ public class PhoneInfoGetUtils {
     }
 
     /**
+     * 获取本地mac地址
+     *
+     * @param context
+     * @return
+     */
+    public static String getLocalMacAddress(Context context) {
+        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo info = wifiManager.getConnectionInfo();
+        return info.getMacAddress();
+    }
+
+    /**
      * md5加密
      *
      * @param string

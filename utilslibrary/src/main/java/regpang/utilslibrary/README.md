@@ -32,6 +32,7 @@ ViewPager的父Adapter类
 - **TimeUtils**
 - **[ToastUtils——Toast提示](https://gitee.com/xmqian/UtilsLibrary/wikis/ToastUtils?parent=utils)**
 - **UpdateManager**
+- **[PhoneInfoGetUtils——手机信息获取](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneInfoGetUtils?parent=utils)**
 
 #### view——自定义View
 - **AlertDialog**

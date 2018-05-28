@@ -7,6 +7,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import regpang.utilslibrary.utils.PhoneInfoGetUtils;
+import regpang.utilslibrary.utils.PhoneNetStateUtil;
 import regpang.utilslibrary.utils.PhoneScreenInfoUtils;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
@@ -19,11 +20,20 @@ import xmqian.myutils.R;
 public class PhoneInfoActivity extends ActivityBase {
     @Bind(R.id.lay_content)
     LinearLayout layCOnten;
+    private TextView tvNetState;
 
     @Override
     protected void setWantShowContentView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_phone_info);
         ButterKnife.bind(this);
+        tvNetState = (TextView) findViewById(R.id.tv_netState);
+
+        PhoneNetStateUtil.registerNetState(this, new PhoneNetStateUtil.NetChangeListener() {
+            @Override
+            public void onNetStateChange(String netWorkState) {
+                tvNetState.setText("当前网络状态：" + netWorkState);
+            }
+        });
     }
 
     @Override
@@ -54,11 +64,21 @@ public class PhoneInfoActivity extends ActivityBase {
         addInfo("设备IMEI号：" + String.valueOf(PhoneInfoGetUtils.getDeviceIMEI(this)));
         //获取Wifi Mac地址
         addInfo("Wifi Mac地址：" + String.valueOf(PhoneInfoGetUtils.getWifiMac(this)));
+        //获取本地Mac地址
+        addInfo("本地Mac地址：" + String.valueOf(PhoneInfoGetUtils.getLocalMacAddress(this)));
+        //获取wifi信号强度
+        addInfo("Wifi信号强度值：" + String.valueOf(PhoneNetStateUtil.getWifiState(this)));
     }
 
     public void addInfo(String infoValue) {
         TextView textView = new TextView(this);
         textView.setText(String.valueOf(infoValue));
         layCOnten.addView(textView);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PhoneNetStateUtil.unregisterNetState(this);
     }
 }
