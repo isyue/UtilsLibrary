@@ -2,14 +2,14 @@ package regpang.utilslibrary.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author xmqian
@@ -66,40 +66,15 @@ public class Utils {
     }
 
     /**
-     * 检测Sdcard是否存在
+     * 是否是标准的手机号码
      *
+     * @param str
      * @return
      */
-    public static boolean isExitsSdcard() {
-        if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
-            return true;
-        else
-            return false;
-    }
-
-    /**
-     * 获取是否存在NavigationBar，是否有虚拟按钮
-     */
-    public static boolean checkDeviceHasNavigationBar(Context context) {
-        boolean hasNavigationBar = false;
-        Resources rs = context.getResources();
-        int id = rs.getIdentifier("config_showNavigationBar", "bool", "android");
-        if (id > 0) {
-            hasNavigationBar = rs.getBoolean(id);
-        }
-        try {
-            Class systemPropertiesClass = Class.forName("android.os.SystemProperties");
-            Method m = systemPropertiesClass.getMethod("get", String.class);
-            String navBarOverride = (String) m.invoke(systemPropertiesClass, "qemu.hw.mainkeys");
-            if ("1".equals(navBarOverride)) {
-                hasNavigationBar = false;
-            } else if ("0".equals(navBarOverride)) {
-                hasNavigationBar = true;
-            }
-        } catch (Exception e) {
-
-        }
-        return hasNavigationBar;
-
+    public static boolean isPhone(String str) {
+        String regExp = "^((13[0-9])|(15[^4])|(18[0-9])|(17[0-8])|(147))\\d{8}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(str);
+        return m.matches();
     }
 }

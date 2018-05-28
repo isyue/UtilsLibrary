@@ -1,13 +1,11 @@
 package regpang.utilslibrary.utils;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
 

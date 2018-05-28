@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import regpang.utilslibrary.utils.PhoneInfoGetUtils;
 import regpang.utilslibrary.utils.PhoneScreenInfoUtils;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
@@ -37,6 +38,22 @@ public class PhoneInfoActivity extends ActivityBase {
         addInfo("状态栏高度：" + String.valueOf(PhoneScreenInfoUtils.getStatusBarHeight(this)));
         //获取虚拟键高度，没有获取为0
         addInfo("虚拟键高度：" + String.valueOf(PhoneScreenInfoUtils.getNavigationBarHeight(this)));
+        //获取是否有SD卡
+        addInfo("是否有SD卡：" + (PhoneInfoGetUtils.isExitsSdcard() ? "有" : "无"));
+        //获取屏幕状态
+        addInfo("屏幕状态：" + (PhoneInfoGetUtils.isScreenOriatationPortrait(this) ? "竖屏" : "横屏"));
+        //获取手机SN号
+        addInfo("手机SN号：" + String.valueOf(PhoneInfoGetUtils.getSN(this)));
+        //获取手机卡SN号
+        addInfo("手机卡SN号:" + String.valueOf(PhoneInfoGetUtils.getSimSN(this)));
+        //是否有虚拟按键
+        addInfo("是否拥有虚拟按键：" + (PhoneInfoGetUtils.checkDeviceHasNavigationBar(this) ? "有" : "无"));
+        //获取设备唯一标识符
+        addInfo("设备唯一标识符：" + String.valueOf(PhoneInfoGetUtils.getUniqueId(this)));
+        //获取设备IMEI号
+        addInfo("设备IMEI号：" + String.valueOf(PhoneInfoGetUtils.getDeviceIMEI(this)));
+        //获取Wifi Mac地址
+        addInfo("Wifi Mac地址：" + String.valueOf(PhoneInfoGetUtils.getWifiMac(this)));
     }
 
     public void addInfo(String infoValue) {
