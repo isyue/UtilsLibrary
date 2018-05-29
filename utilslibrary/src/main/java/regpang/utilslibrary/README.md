@@ -24,7 +24,6 @@ ViewPager的父Adapter类
 - **DialogUtil**
 - **[LogX——日志打印](https://gitee.com/xmqian/UtilsLibrary/wikis/LogX?parent=utils)**
 - **MD5**
-- **NetWorkHelper**
 - **[PhoneScreenInfoUtils——获取手机屏幕信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneScreenInfoUtils?parent=utils)**
 - **PreferenceHelper**
 - **SharePreUtil**
@@ -33,7 +32,7 @@ ViewPager的父Adapter类
 - **[ToastUtils——Toast提示](https://gitee.com/xmqian/UtilsLibrary/wikis/ToastUtils?parent=utils)**
 - **UpdateManager**
 - **[PhoneInfoGetUtils——手机信息获取](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneInfoGetUtils?parent=utils)**
-
+- **[PhoneNetStateUtils——手机网络状态获取](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneNetStateUtils?parent=utils)**
 #### view——自定义View
 - **AlertDialog**
 - **ContainsEnojiEditText**

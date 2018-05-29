@@ -23,7 +23,7 @@ import android.widget.Toast;
  * <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
  * <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
  */
-public class PhoneNetStateUtil {
+public class PhoneNetStateUtils {
 
     /**
      * 网络状态类型
@@ -170,13 +170,38 @@ public class PhoneNetStateUtil {
      * 判断当前网络是否为wifi
      *
      * @param mContext
-     * @return
+     * @return 是：true;不是：false
      */
 
     public static boolean isWifi(Context mContext) {
         if (getCurrentNetType(mContext).equals(NetState.WIFI.type)) {
             return true;
         }
+        return false;
+    }
+
+    /**
+     * 判断网络是否可用
+     *
+     * @param context
+     * @return 可用：true,不可用：false
+     */
+    public static boolean isNetWorkAvailble(Context context) {
+        try {
+            ConnectivityManager connectivity = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            if (connectivity != null) {
+                NetworkInfo info = connectivity.getActiveNetworkInfo();
+                if ((info != null) && (info.isConnected())) {
+                    if (info.getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return false;
     }
 
