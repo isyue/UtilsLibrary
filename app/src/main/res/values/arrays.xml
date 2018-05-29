@@ -4,5 +4,6 @@
         <item>Toast测试</item>
         <item>屏幕密度单位转换</item>
         <item>展示手机信息</item>
+        <item>时间格式显示</item>
     </string-array>
 </resources>

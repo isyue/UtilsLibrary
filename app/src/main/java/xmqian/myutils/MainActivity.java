@@ -14,6 +14,7 @@ import java.util.List;
 
 import xmqian.myutils.simple.DensitySimpleActivity;
 import xmqian.myutils.simple.PhoneInfoActivity;
+import xmqian.myutils.simple.TimeSimpleActivity;
 import xmqian.myutils.simple.ToastActivity;
 
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         activitys.add(ToastActivity.class);
         activitys.add(DensitySimpleActivity.class);
         activitys.add(PhoneInfoActivity.class);
+        activitys.add(TimeSimpleActivity.class);
     }
 
     private void goActivity(Class activity) {

@@ -19,6 +19,7 @@
         <activity android:name=".simple.ToastActivity"></activity>
         <activity android:name=".simple.DensitySimpleActivity" />
         <activity android:name=".simple.PhoneInfoActivity" />
+        <activity android:name=".simple.TimeSimpleActivity" />
     </application>
 
 </manifest>

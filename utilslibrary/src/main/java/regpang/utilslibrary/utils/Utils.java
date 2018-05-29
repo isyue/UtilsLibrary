@@ -77,4 +77,18 @@ public class Utils {
         Matcher m = p.matcher(str);
         return m.matches();
     }
+
+    /**
+     * 判断是不是一个合法的电子邮件地址
+     *
+     * @param email
+     * @return
+     */
+    public static boolean isEmail(String email) {
+        Pattern emailer = Pattern
+                .compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+        if (email == null || email.trim().length() == 0)
+            return false;
+        return emailer.matcher(email).matches();
+    }
 }
