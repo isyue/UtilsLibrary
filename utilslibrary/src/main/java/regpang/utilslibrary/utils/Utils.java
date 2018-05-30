@@ -31,64 +31,8 @@ public class Utils {
 
     }
 
-    /**
-     * 格式化手机号，中间4-7位号码隐藏
-     *
-     * @param phoneNum
-     * @return
-     */
-    public static String getPhoneFormat(String phoneNum) {
-        return phoneNum.substring(0, 3).intern() + "****" + phoneNum.substring(7, 11).intern();
-    }
 
-    /**
-     * 密码是否是字母和数字的组合
-     *
-     * @param pwd
-     * @return
-     */
-    public static boolean isPwd(String pwd) {
-        String regex = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$";
-        return pwd.matches(regex);
-    }
 
-    /**
-     * 以文件名的格式获取当前时间
-     *
-     * @return "yyyyMMdd_HHmmss"
-     */
-    public static String getFileName() {
-        Date date = new Date(System.currentTimeMillis());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        Random random = new Random();
-        int num = random.nextInt() * 100;
-        return dateFormat.format(date) + num + ".";
-    }
 
-    /**
-     * 是否是标准的手机号码
-     *
-     * @param str
-     * @return
-     */
-    public static boolean isPhone(String str) {
-        String regExp = "^((13[0-9])|(15[^4])|(18[0-9])|(17[0-8])|(147))\\d{8}$";
-        Pattern p = Pattern.compile(regExp);
-        Matcher m = p.matcher(str);
-        return m.matches();
-    }
 
-    /**
-     * 判断是不是一个合法的电子邮件地址
-     *
-     * @param email
-     * @return
-     */
-    public static boolean isEmail(String email) {
-        Pattern emailer = Pattern
-                .compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
-        if (email == null || email.trim().length() == 0)
-            return false;
-        return emailer.matcher(email).matches();
-    }
 }

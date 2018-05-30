@@ -1,4 +1,4 @@
-package com.learnknow.teacher.util;
+package regpang.utilslibrary.utils;
 
 import android.content.Context;
 import android.os.Handler;
@@ -76,7 +76,7 @@ public class DataCacheManager {
 			@Override
 			public void run() {
 				try {
-					String size = DataCleanUtil.getCacheSize(context
+					String size = com.learnknow.teacher.util.DataCleanUtil.getCacheSize(context
 							.getExternalCacheDir());
 					mHandler.obtainMessage(READ_SIZE_FINISHED, 0, 0, size)
 							.sendToTarget();
@@ -97,7 +97,7 @@ public class DataCacheManager {
 			public void run() {
 				try {
 					Thread.sleep(1000);
-					DataCleanUtil.cleanExternalCache(context);
+					com.learnknow.teacher.util.DataCleanUtil.cleanExternalCache(context);
 					mHandler.sendEmptyMessage(CLEAN_FINISHED);
 				} catch (Exception e) {
 					e.printStackTrace();
