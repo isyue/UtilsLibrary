@@ -2,13 +2,7 @@ package regpang.utilslibrary.base;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
-
-import regpang.utilslibrary.R;
-import regpang.utilslibrary.utils.DialogUtils;
 
 /**
  * Created by zhangfeng on 2016/4/28.

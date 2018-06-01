@@ -7,9 +7,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * SharedPreferences存储的封装类
+ * SharedPreferences存储App的配置数据
  */
-public class SharePreUtil {
+public class SharedPreUtils {
 
     private static String CONFIG = "config";
     private static SharedPreferences sharedPreferences;
@@ -18,8 +18,8 @@ public class SharePreUtil {
      * 存储字符串
      *
      * @param context 上下文
-     * @param key     键名称
-     * @param value   值内容
+     * @param key 键名称
+     * @param value 值内容
      */
     public static void saveStringData(Context context, String key, String value) {
         if (sharedPreferences == null) {
@@ -32,8 +32,8 @@ public class SharePreUtil {
     /**
      * 取得存储的字符串
      *
-     * @param context  上下文
-     * @param key      键名称
+     * @param context 上下文
+     * @param key 键名称
      * @param defValue 默认值
      * @return 返回存储的值，没有则返回默认值
      */
@@ -63,7 +63,7 @@ public class SharePreUtil {
      * 删除文件中指定的键值数据
      *
      * @param context 上下文
-     * @param key     你要删除的键名称
+     * @param key 你要删除的键名称
      */
     public static void deleteStringData(Context context, String key) {
         if (sharedPreferences == null) {

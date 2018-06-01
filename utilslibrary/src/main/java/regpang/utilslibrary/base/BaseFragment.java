@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import regpang.utilslibrary.R;
-import regpang.utilslibrary.utils.DialogUtils;
+import regpang.utilslibrary.utils.LoadingUtils;
 import regpang.utilslibrary.utils.LogX;
 
 
@@ -19,12 +19,12 @@ import regpang.utilslibrary.utils.LogX;
  */
 public abstract class BaseFragment extends Fragment {
     public View view;
-    protected DialogUtils dialogUtils;
+    protected LoadingUtils loadingUtils;
     protected Context context;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        dialogUtils = new DialogUtils(getActivity(), getActivity().getString(R.string.dialog_request_data));
+        loadingUtils = new LoadingUtils(getActivity(), getActivity().getString(R.string.dialog_request_data));
         view = getView();
         LogX.e("view","view");
         return view;

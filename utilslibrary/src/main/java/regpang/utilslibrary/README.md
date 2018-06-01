@@ -21,12 +21,12 @@ ViewPager的父Adapter类
 - **DataCacheManager**
 - **DataCleanUtil**
 - **[DensityUtil——屏幕密度单位转换](https://gitee.com/xmqian/UtilsLibrary/wikis/DensityUtil?parent=utils)**
-- **DialogUtil**
+- **[LoadingUtils](https://gitee.com/xmqian/UtilsLibrary/wikis/LoadingUtils?parent=utils)**
 - **[LogX——日志打印](https://gitee.com/xmqian/UtilsLibrary/wikis/LogX?parent=utils)**
-- **MD5**
+- **[EncryptUtils](https://gitee.com/xmqian/UtilsLibrary/wikis/EncryptUtils?parent=utils)**
 - **[PhoneScreenInfoUtils——获取手机屏幕信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneScreenInfoUtils?parent=utils)**
-- **PreferenceHelper**
-- **SharePreUtil**
+- **[PreferenceHelper](https://gitee.com/xmqian/UtilsLibrary/wikis/PreferenceHelper?parent=utils)**
+- **[SharedPreUtils](https://gitee.com/xmqian/UtilsLibrary/wikis/SharedPreUtils?parent=utils)**
 - **[StringUtils](https://gitee.com/xmqian/UtilsLibrary/wikis/StringUtils?parent=utils)**
 - **[TimeUtils——时间操作类](https://gitee.com/xmqian/UtilsLibrary/wikis/TimeUtils?parent=utils)**
 - **[ToastUtils——Toast提示](https://gitee.com/xmqian/UtilsLibrary/wikis/ToastUtils?parent=utils)**
