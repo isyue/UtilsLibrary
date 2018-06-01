@@ -27,6 +27,19 @@ public class StringUtils {
     }
 
     /**
+     * 验证18位身份证
+     *
+     * @param input The input.
+     * @return {@code true}: yes<br>{@code false}: no
+     */
+    public static boolean isIDCard(final CharSequence input) {
+        String regExp = "^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{3}([0-9Xx])$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(input);
+        return m.matches();
+    }
+
+    /**
      * 是否是标准的手机号码
      *
      * @param str

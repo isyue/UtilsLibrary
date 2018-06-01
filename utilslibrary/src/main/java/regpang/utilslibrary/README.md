@@ -27,7 +27,7 @@ ViewPager的父Adapter类
 - **[PhoneScreenInfoUtils——获取手机屏幕信息](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneScreenInfoUtils?parent=utils)**
 - **PreferenceHelper**
 - **SharePreUtil**
-- **StringUtils**
+- **[StringUtils](https://gitee.com/xmqian/UtilsLibrary/wikis/StringUtils?parent=utils)**
 - **[TimeUtils——时间操作类](https://gitee.com/xmqian/UtilsLibrary/wikis/TimeUtils?parent=utils)**
 - **[ToastUtils——Toast提示](https://gitee.com/xmqian/UtilsLibrary/wikis/ToastUtils?parent=utils)**
 - **UpdateManager**
