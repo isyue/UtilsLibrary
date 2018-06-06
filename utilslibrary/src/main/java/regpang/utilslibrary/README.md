@@ -16,7 +16,7 @@ ViewPager的父Adapter类
 · **NewWorkCallBack**
 
 #### utils——常用工具类
-- **AppUtils**
+- **[AppUtils](https://gitee.com/xmqian/UtilsLibrary/wikis/AppUtils?parent=utils)**
 - **CacheUtils**
 - **DataCacheManager**
 - **DataCleanUtil**
