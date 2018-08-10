@@ -9,7 +9,7 @@ import android.content.pm.PackageManager;
  *     blog  : http://blankj.com
  *     time  : 2016/08/02
  *     @link(https://github.com/Blankj/AndroidUtilCode/edit/master/utilcode/src/main/java/com/blankj/utilcode/util/AppUtils.java)
- *     desc  : App工具类，获取app信息，和操作app
+ *     desc  : App工具类，获取app信息，和操作app-比如安装和自动卸载等
  * </pre>
  */
 public final class AppUtils {
@@ -19,7 +19,7 @@ public final class AppUtils {
      * @param mContext
      * @return
      */
-        public static int getVersionCode(Context mContext) {
+    public static int getVersionCode(Context mContext) {
         int versionCode = 0;
         try {
             //获取软件版本号，对应AndroidManifest.xml下android:versionCode
