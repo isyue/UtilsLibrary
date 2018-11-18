@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import xmqian.myutils.simple.CheckInputActivity;
 import xmqian.myutils.simple.DensitySimpleActivity;
 import xmqian.myutils.simple.PhoneInfoActivity;
 import xmqian.myutils.simple.TimeSimpleActivity;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         activitys.add(DensitySimpleActivity.class);
         activitys.add(PhoneInfoActivity.class);
         activitys.add(TimeSimpleActivity.class);
+        activitys.add(CheckInputActivity.class);
     }
 
     private void goActivity(Class activity) {

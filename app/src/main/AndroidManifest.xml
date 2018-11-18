@@ -3,11 +3,11 @@
     package="xmqian.myutils">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".App"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -16,10 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".simple.ToastActivity"></activity>
+        <activity android:name=".simple.ToastActivity" />
         <activity android:name=".simple.DensitySimpleActivity" />
         <activity android:name=".simple.PhoneInfoActivity" />
         <activity android:name=".simple.TimeSimpleActivity" />
+        <activity android:name=".simple.CheckInputActivity"></activity>
     </application>
 
 </manifest>
