@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '24.0.2'
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
     defaultConfig {
         applicationId "xmqian.myutils"
         minSdkVersion 14
@@ -20,8 +20,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.0.0'
     compile project(':utilslibrary')
     /*注解*/
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.lovedise:permissiongen:0.0.6'
 }
