@@ -10,6 +10,10 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    /*lintOptions{
+        //遇到错误终止打包，false为不会终止
+        abortOnError true
+    }*/
     buildTypes {
         release {
             minifyEnabled false
@@ -34,10 +38,10 @@ task makeJar(type: Jar) {
     //指定生成的jar名
     baseName 'utils_library'
     //从哪里打包class文件
-    from('build/intermediates/classes/release/regpang/utilslibrary')
+    from('utilslibrary/build/intermediates/classes/release/regpang/utilslibrary')
     //打包到jar后的目录结构
     into('com.xmqian.utilslibrary')
     //去掉不需要打包的目录和文件
-    exclude { it.name.startsWith('R$'); }
+    exclude { it.name.startsWith('R$') }
 }
 makeJar.dependsOn(clearJar, build)
