@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import regpang.utilslibrary.R;
 import regpang.utilslibrary.utils.LoadingUtils;
 import regpang.utilslibrary.utils.LogX;
 
@@ -24,7 +23,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        loadingUtils = new LoadingUtils(getActivity(), getActivity().getString(R.string.dialog_request_data));
+        loadingUtils = new LoadingUtils(getActivity(), "请求中……");
         view = getView();
         LogX.e("view","view");
         return view;
