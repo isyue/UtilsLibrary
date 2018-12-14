@@ -1,15 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '24.0.2'
+    compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
+    buildToolsVersion project.BUILD_TOOLS_VERSION
     defaultConfig {
         applicationId "xmqian.myutils"
-        minSdkVersion 21
-        targetSdkVersion 26
+        minSdkVersion Integer.parseInt(project.MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //使用了注解添加如下配置
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
     buildTypes {
         release {
@@ -20,8 +23,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:26.0.0'
-    compile project(':utilslibrary')
+    implementation project(':utilslibrary')
     /*注解*/
-    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.jakewharton:butterknife:7.0.1'
 }
