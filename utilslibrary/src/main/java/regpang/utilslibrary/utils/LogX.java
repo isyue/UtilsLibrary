@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 /**
  * 打印Log日志
  *
@@ -16,7 +17,8 @@ import java.io.IOException;
  */
 public class LogX {
     private static final String TAG = "AppLog";
-    //控制日志开关
+    //控制日志开关,自动判断是否显示日志
+//    private static boolean isOpen = BuildConfig.DEBUG;
     private static boolean isOpen = true;
 
     private static boolean isLogError = isOpen;
