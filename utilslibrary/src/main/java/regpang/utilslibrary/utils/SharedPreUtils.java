@@ -7,7 +7,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
- * SharedPreferences存储App的配置数据
+ * @author xmqian
+ * @date 2018/12/29 10:14
+ * @desc SharedPreferences存储App的配置数据
  */
 public class SharedPreUtils {
 
@@ -27,6 +29,34 @@ public class SharedPreUtils {
         }
 
         sharedPreferences.edit().putString(key, value).commit();
+    }
+
+    public static void saveBoolean(Context context, String key, boolean value) {
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+        }
+        sharedPreferences.edit().putBoolean(key, value).commit();
+    }
+
+    public static Boolean getBooleanData(Context context, String key, Boolean defValue) {
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+        }
+        return sharedPreferences.getBoolean(key, defValue);
+    }
+
+    public static void saveInteger(Context context, String key, int value) {
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+        }
+        sharedPreferences.edit().putInt(key, value).commit();
+    }
+
+    public static int getIntegerData(Context context, String key, int defValue) {
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+        }
+        return sharedPreferences.getInt(key, defValue);
     }
 
     /**
