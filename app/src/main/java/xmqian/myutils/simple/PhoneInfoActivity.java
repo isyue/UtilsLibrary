@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import regpang.utilslibrary.utils.PhoneInfoGetUtils;
-import regpang.utilslibrary.utils.PhoneNetStateUtils;
-import regpang.utilslibrary.utils.PhoneScreenInfoUtils;
+import coszero.utilslibrary.utils.PhoneInfoGetUtils;
+import coszero.utilslibrary.utils.PhoneNetStateUtils;
+import coszero.utilslibrary.utils.PhoneScreenInfoUtils;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
 

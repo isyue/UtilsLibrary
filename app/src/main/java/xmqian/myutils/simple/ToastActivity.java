@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import regpang.utilslibrary.utils.ToastUtils;
+import coszero.utilslibrary.utils.ToastUtils;
 import xmqian.myutils.R;
 
 /**

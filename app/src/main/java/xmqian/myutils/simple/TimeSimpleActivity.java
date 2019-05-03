@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.sql.Time;
 import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import regpang.utilslibrary.utils.TimeUtils;
+import coszero.utilslibrary.utils.TimeUtils;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
 

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import regpang.utilslibrary.utils.DensityUtil;
+import coszero.utilslibrary.utils.DensityUtil;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
 

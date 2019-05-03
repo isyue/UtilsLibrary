@@ -3,7 +3,7 @@ package xmqian.myutils;
 import android.os.Bundle;
 
 import butterknife.ButterKnife;
-import regpang.utilslibrary.base.BaseActivity;
+import coszero.utilslibrary.base.BaseActivity;
 
 /**
  * @author xmqian
