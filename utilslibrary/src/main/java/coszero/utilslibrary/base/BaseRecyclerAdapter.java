@@ -8,13 +8,10 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import coszero.utilslibrary.R;
 import coszero.utilslibrary.callback.OnItemClickListener;
 
 
@@ -22,6 +19,7 @@ import coszero.utilslibrary.callback.OnItemClickListener;
  * ClassName: BaseRecyclerAdapter<p>
  * Author:oubowu<p>
  * Fuction: RecyclerView通用适配器<p>
+ *     使用空布局时，需要传入空布局
  * CreateDate:2016/2/16 22:47<p>
  * UpdateUser:<p>
  * UpdateDate:<p>
@@ -49,6 +47,8 @@ public abstract class BaseRecyclerAdapter<T> extends AdapterRecyclerBase<BaseRec
     //数据为空显示的图片
     private int emptyImage = 0;
     private String emptyStr = "抱歉，还没有数据哟~";
+    //设在是一个空布局
+    private int emptyLayoutId = 0;
 
     public BaseRecyclerAdapter(Context context, List<T> data) {
         this(context, data, true);
@@ -74,14 +74,17 @@ public abstract class BaseRecyclerAdapter<T> extends AdapterRecyclerBase<BaseRec
         mStatus = status;
     }
 
+    public void setEmptyLayoutId(int emptyLayoutId) {
+        this.emptyLayoutId = emptyLayoutId;
+    }
 
     @Override
     public BaseRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_FOOTER) {
             return new BaseRecyclerViewHolder(mContext,
-                    mInflater.inflate(R.layout.item_footer_new, parent, false));
+                    mInflater.inflate(emptyLayoutId, parent, false));
         } else if (viewType == TYPE_EMPTY) {
-            return new BaseRecyclerViewHolder(mContext, mInflater.inflate(R.layout.item_empty, parent, false));
+            return new BaseRecyclerViewHolder(mContext, mInflater.inflate(emptyLayoutId, parent, false));
         } else {
             final BaseRecyclerViewHolder holder = new BaseRecyclerViewHolder(mContext,
                     mInflater.inflate(getItemLayoutId(viewType), parent, false));
@@ -125,12 +128,12 @@ public abstract class BaseRecyclerAdapter<T> extends AdapterRecyclerBase<BaseRec
             }
         } else if (getItemViewType(position) == TYPE_EMPTY) {
             if (mShowEmpty) {
-                ImageView ivImage = holder.getImageView(R.id.iv_image);
+                /*ImageView ivImage = holder.getImageView(R.id.iv_image);
                 ivImage.setVisibility(View.VISIBLE);
                 ivImage.setImageResource(emptyImage);
                 TextView tvText = holder.getTextView(R.id.tv_text);
                 tvText.setVisibility(View.VISIBLE);
-                tvText.setText(emptyStr);
+                tvText.setText(emptyStr);*/
             }
 //            bindData(holder, position, null);
 //            showEmpty();

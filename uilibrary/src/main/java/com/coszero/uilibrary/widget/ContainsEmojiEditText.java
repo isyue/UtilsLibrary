@@ -1,4 +1,4 @@
-package coszero.utilslibrary.view;
+package com.coszero.uilibrary.widget;
 
 import android.content.Context;
 import android.text.Editable;
@@ -6,14 +6,13 @@ import android.text.Selection;
 import android.text.Spannable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.widget.EditText;
 import android.widget.Toast;
 
 /**
  * Created by AndroidDeveloper on 2017/5/15 0015.
  */
 
-public class ContainsEmojiEditText extends EditText {
+public class ContainsEmojiEditText extends android.support.v7.widget.AppCompatEditText {
     //输入表情前的光标位置
     private int cursorPos;
     //输入表情前EditText中的文本

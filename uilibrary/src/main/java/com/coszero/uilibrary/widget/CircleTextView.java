@@ -1,17 +1,16 @@
-package coszero.utilslibrary.widget;
+package com.coszero.uilibrary.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 /**
  * Created by huihui on 2016/1/26.
  * textView环绕圆形
  */
-public class CircleTextView extends TextView {
+public class CircleTextView extends android.support.v7.widget.AppCompatTextView {
 
     private Paint paint = new Paint();
 

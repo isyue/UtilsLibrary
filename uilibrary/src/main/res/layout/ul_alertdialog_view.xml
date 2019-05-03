@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_weight="1"
-            android:background="@drawable/alertdialog_left_selector"
+            android:background="@drawable/ul_alertdialog_left_selector"
             android:gravity="center"
             android:textColor="#3f97f7"
             android:textSize="16sp" />
@@ -74,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_weight="1"
-            android:background="@drawable/alertdialog_right_selector"
+            android:background="@drawable/ul_alertdialog_right_selector"
             android:gravity="center"
             android:textColor="#3f97f7"
             android:textSize="16sp" />

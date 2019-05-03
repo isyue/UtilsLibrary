@@ -1,4 +1,4 @@
-package coszero.utilslibrary.view;
+package com.coszero.uilibrary.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import coszero.utilslibrary.R;
+import com.coszero.uilibrary.R;
 
 
 /**
@@ -48,7 +48,7 @@ public class AlertDialog {
 
     public AlertDialog builder() {
         View view = LayoutInflater.from(context).inflate(
-                R.layout.alertdialog_view, null);
+                R.layout.ul_alertdialog_view, null);
 
         lLayout_bg = (LinearLayout) view.findViewById(R.id.lLayout_bg);
         txt_title = (TextView) view.findViewById(R.id.txt_title);
@@ -64,7 +64,7 @@ public class AlertDialog {
         img_line = (ImageView) view.findViewById(R.id.img_line);
         img_line.setVisibility(View.GONE);
 
-        dialog = new Dialog(context, R.style.AlertDialogStyle);
+        dialog = new Dialog(context, R.style.UiAlertDialogStyle);
         dialog.setContentView(view);
 
         lLayout_bg.setLayoutParams(new FrameLayout.LayoutParams((int) (display
@@ -185,9 +185,9 @@ public class AlertDialog {
 
         if (showPosBtn && showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-           // btn_pos.setBackgroundResource(R.drawable.alertdialog_right_selector);
+           // btn_pos.setBackgroundResource(R.drawable.ul_alertdialog_right_selector);
             btn_neg.setVisibility(View.VISIBLE);
-           // btn_neg.setBackgroundResource(R.drawable.alertdialog_left_selector);
+           // btn_neg.setBackgroundResource(R.drawable.ul_alertdialog_left_selector);
             img_line.setVisibility(View.VISIBLE);
         }
 

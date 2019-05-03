@@ -1,4 +1,4 @@
-package coszero.utilslibrary.view;
+package com.coszero.uilibrary.widget;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -7,7 +7,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-import coszero.utilslibrary.R;
+import com.coszero.uilibrary.R;
 
 
 /**
@@ -26,7 +26,7 @@ public class ProgressWebView extends WebView {
         progressbar.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
                 3, 0, 0));
         //设置进度条样式和颜色
-        Drawable drawable = context.getResources().getDrawable(R.drawable.progress_webview_bar_states);
+        Drawable drawable = context.getResources().getDrawable(R.drawable.ul_progress_webview_bar_states);
         progressbar.setProgressDrawable(drawable);
         //将进度条添加进入父布局
         addView(progressbar);

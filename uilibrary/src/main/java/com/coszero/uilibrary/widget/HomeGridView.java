@@ -1,4 +1,4 @@
-package coszero.utilslibrary.widget;
+package com.coszero.uilibrary.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
