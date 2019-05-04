@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(project.MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         //如果dex文件合并失败就开启,65535
         multiDexEnabled false
     }
