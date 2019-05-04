@@ -26,4 +26,5 @@ dependencies {
     implementation project(':utilslibrary')
     /*注解*/
     implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation project(path: ':uilibrary')
 }
