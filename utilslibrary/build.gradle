@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(project.MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
-        versionCode 2
-        versionName "1.1"
+        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
         //如果dex文件合并失败就开启,65535
         multiDexEnabled false
     }
@@ -28,18 +28,18 @@ dependencies {
     api "com.android.support:appcompat-v7:${project.SUPPORT_VERSION}"
     api "com.android.support:design:${project.SUPPORT_VERSION}"
 }
-
+//删除生成的jar
 task clearJar(type: Delete) {
-    delete 'build/libs/utilslibrary.jar'
+    delete 'build/libs/'+'coszero_utilslibrary_v' + project.VERSION_NAME + '.jar'
     delete 'libs/utilslibrary.jar'
 }
 
-//Copy类型
+//生成jar并将生成的jar复制到指定位置
 task makeJar(type: Copy) {
     //删除存在的
     delete 'build/libs/mysdk.jar'
     //设置拷贝的文件
-    from('build/intermediates/bundles/release/')
+    from('build/intermediates/packaged-classes/release/')
     //打进jar包后的文件目录
     into('build/libs/')
     //将classes.jar放入build/libs/目录下
@@ -47,7 +47,7 @@ task makeJar(type: Copy) {
     //（我们只关心classes.jar这个文件）
     include('classes.jar')
     //重命名
-    rename('classes.jar', 'mysdk.jar')
+    rename('classes.jar', 'coszero_utilslibrary_v' + project.VERSION_NAME + '.jar')
 }
 
 makeJar.dependsOn(build)
