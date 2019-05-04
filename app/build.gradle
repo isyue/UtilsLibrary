@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+        //启用Android 测试支持库
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //使用了注解添加如下配置
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
@@ -27,4 +28,10 @@ dependencies {
     /*注解*/
     implementation 'com.jakewharton:butterknife:7.0.1'
     implementation project(path: ':uilibrary')
+    //单元测试类
+    testImplementation 'junit:junit:4.12'
+    //添加Android测试支持库
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
