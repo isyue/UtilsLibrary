@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--com.coszero.uilibrary.dialog.AlertDialog-->
+    <!--com.com.coszero.uilibrary.dialog.AlertDialog-->
     <style name="UiAlertDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>

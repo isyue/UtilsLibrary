@@ -2,7 +2,7 @@ package xmqian.myutils;
 
 import android.app.Application;
 
-import coszero.utilslibrary.utils.ToastUtils;
+import com.coszero.utilslibrary.utils.ToastUtils;
 
 /**
  * @author xmqian

@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import coszero.utilslibrary.utils.PhoneInfoGetUtils;
-import coszero.utilslibrary.utils.PhoneNetStateUtils;
-import coszero.utilslibrary.utils.PhoneScreenInfoUtils;
+import com.coszero.utilslibrary.utils.PhoneInfoGetUtils;
+import com.coszero.utilslibrary.utils.PhoneNetStateUtils;
+import com.coszero.utilslibrary.utils.PhoneScreenInfoUtils;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
 

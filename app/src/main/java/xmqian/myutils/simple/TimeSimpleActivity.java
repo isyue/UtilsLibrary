@@ -8,7 +8,7 @@ import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import coszero.utilslibrary.utils.TimeUtils;
+import com.coszero.utilslibrary.utils.TimeUtils;
 import xmqian.myutils.ActivityBase;
 import xmqian.myutils.R;
 
