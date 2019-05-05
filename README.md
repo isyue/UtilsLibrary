@@ -1,7 +1,8 @@
 #### 项目介绍
 > 收集一些常用的代码片段，进行整理。  
 [Git上别人整理的链接](https://github.com/Blankj/AndroidUtilCode)
-
+- utilslibrary 工具类包，没有资源文件，使用gradle命令进行jar构建使用
+- uilibrary UI工具包，拥有资源文件，使用gradle自带命令进行aar包的构建
 #### 参与规则
 > **此工具类原则：**  
 - 功能集合必须用一个类包含  
