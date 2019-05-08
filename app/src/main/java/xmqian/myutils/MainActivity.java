@@ -20,7 +20,6 @@ import xmqian.myutils.simple.ToastActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-
     private List<String> items;
     public List<Class<?>> activitys;
 
