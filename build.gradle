@@ -3,10 +3,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
@@ -21,9 +18,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //添加自己的Github仓库
         maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+            url 'https://raw.githubusercontent.com/isyue/UtilsLibrary/master/repository'
         }
     }
 }

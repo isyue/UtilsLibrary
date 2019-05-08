@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+//maven插件
+apply plugin: 'maven'
 android {
     compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
 
@@ -24,4 +25,18 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api "com.android.support:appcompat-v7:${project.SUPPORT_VERSION}"
+}
+
+//生成本地的maven仓库
+uploadArchives {
+    repositories.mavenDeployer {
+// 配置本地仓库路径，项目根目录下的repository目录中
+        repository(url: uri('../repository'))
+        pom.groupId = "com.coszero"
+// 唯一标识（通常为模块包名，也可以任意）
+        pom.artifactId = "UiLibrary"
+// 项目名称（通常为类库模块名称，也可以任意）
+        pom.version = project.VERSION_NAME
+// 版本号
+    }
 }
