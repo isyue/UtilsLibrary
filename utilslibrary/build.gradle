@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
+//maven插件
 apply plugin: 'maven'
+//Jcenter插件
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
 
@@ -79,5 +82,15 @@ uploadArchives {
 // 项目名称（通常为类库模块名称，也可以任意）
         pom.version = "1.1.0"
 // 版本号
+    }
+
+    //上传Jcenter
+    publish {
+        userOrg = 'xmqian'//bintray账户下某个组织id
+        groupId = 'com.coszero'//maven仓库下库的包名,一般为模块包名
+        artifactId = 'UtilsLibrary'//项目名称
+        publishVersion = '1.1.0'//项目版本号
+        desc = 'this is utils'//项目介绍，可不写
+        website = ''//项目主页，可以不写
     }
 }
