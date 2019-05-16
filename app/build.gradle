@@ -24,10 +24,14 @@ android {
 }
 
 dependencies {
-    implementation project(':utilslibrary')
+    //测试包测试
+    debugImplementation project(path: ':utilslibrary')
+    debugImplementation project(path: ':uilibrary')
+    //正式包测试releaseImplementation
+    releaseImplementation 'com.coszero:UiLibrary:1.1.0'
+    releaseImplementation 'com.coszero:UtilsLibrary:1.1.0'
     /*注解*/
     implementation 'com.jakewharton:butterknife:7.0.1'
-    implementation project(path: ':uilibrary')
     //单元测试类
     testImplementation 'junit:junit:4.12'
     //添加Android测试支持库
