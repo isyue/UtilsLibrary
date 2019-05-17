@@ -2,6 +2,7 @@ package com.coszero.utilslibrary.app;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
@@ -15,9 +16,6 @@ import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
 
-import com.coszero.utilslibrary.utils.LogX;
-import com.coszero.utilslibrary.utils.StringUtils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,7 +23,6 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,6 +35,62 @@ import java.util.List;
  * </pre>
  */
 public final class AppUtils {
+    private AppUtils() {
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
+    /**
+     * 获取应用程序名称
+     */
+    public static String getAppName(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            PackageInfo packageInfo = packageManager.getPackageInfo(
+                    context.getPackageName(), 0);
+            int labelRes = packageInfo.applicationInfo.labelRes;
+            return context.getResources().getString(labelRes);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取应用包名
+     *
+     * @param context
+     * @return 当前应用的包名
+     */
+    public static String getPackageName(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            PackageInfo packageInfo = packageManager.getPackageInfo(
+                    context.getPackageName(), 0);
+            return packageInfo.packageName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 获取应用程序版本名称信息
+     *
+     * @param context
+     * @return 当前应用的版本名称
+     */
+    public static String getVersionName(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            PackageInfo packageInfo = packageManager.getPackageInfo(
+                    context.getPackageName(), 0);
+            return packageInfo.versionName;
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     /**
      * 设置textView图标
@@ -211,10 +264,6 @@ public final class AppUtils {
         textView.setText(builder);
     }
 
-    public static <V> boolean isEmptyLs(List<V> list) {
-        return null == list || list.size() <= 0;
-    }
-
     public static int getColor(Context context, int colorId) {
         return context.getResources().getColor(colorId);
     }
@@ -241,30 +290,6 @@ public final class AppUtils {
         return subSql.toString();
     }
 
-    /**
-     * 判断 json 对象是否为空对象
-     * 对象里整型字段必须用 transient 修饰符
-     *
-     * @param obj
-     * @return
-     */
-    public static boolean isJsonObjectEmpty(Object obj) {
-        if (null == obj) {
-            return true;
-        }
-        /*Gson gson = new Gson();
-        String json = gson.toJson(obj);*/
-
-        String json = null;
-        try {
-            json = obj.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        LogX.d("json = " + json);
-        return TextUtils.equals(json, "{}");
-    }
-
     public static String double2Str(double num) {
         DecimalFormat format1 = new DecimalFormat("0.00");
         String couponMoney = format1.format(num);
@@ -286,7 +311,7 @@ public final class AppUtils {
      */
     public static Spanned formatColorText(Context context, int inputNum, int maxLength) {
         return Html.fromHtml("<font color = '" + AppUtils.getColor(context, 0xff0000ff) + "'>" + inputNum + "</font>" + "<font color = '" +
-                AppUtils.getColor(context,0xff999999) + "'>" + "/" + maxLength + "</font>");
+                AppUtils.getColor(context, 0xff999999) + "'>" + "/" + maxLength + "</font>");
     }
 
     public static int strToInt(String tag) {
@@ -298,58 +323,6 @@ public final class AppUtils {
         } catch (Exception e) {
             return 0;
         }
-    }
-
-    /**
-     * 字符串空安全检查
-     *
-     * @param str
-     * @return
-     */
-    public static String checkString(String str) {
-        if (StringUtils.isEmpty(str)) {
-            return "";
-        }
-        return str;
-    }
-
-    /**
-     * 字符串空安全检查
-     *
-     * @param list
-     * @return
-     */
-    public static List checkList(List list) {
-        if (isEmptyLs(list)) {
-            return new ArrayList();
-        }
-        return list;
-    }
-
-    /**
-     * 对象空安全检查
-     *
-     * @param object
-     * @return 空为 false
-     */
-    public static boolean checkObject(Object object) {
-        if (isJsonObjectEmpty(object)) {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * 检查可能为int值得字符串类型
-     *
-     * @param id
-     * @return 返回为0，方式转换int值时报错
-     */
-    public static String checkIntStr(String id) {
-        if (StringUtils.isEmpty(id)) {
-            return "0";
-        }
-        return id;
     }
 
     /**
@@ -370,20 +343,5 @@ public final class AppUtils {
         return versionCode;
     }
 
-    /**
-     * 获取版本号名称
-     *
-     * @param context 上下文
-     * @return
-     */
-    public static String getVerName(Context context) {
-        String verName = "";
-        try {
-            verName = context.getPackageManager().
-                    getPackageInfo(context.getPackageName(), 0).versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        return verName;
-    }
+
 }

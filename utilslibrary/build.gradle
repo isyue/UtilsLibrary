@@ -30,6 +30,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api "com.android.support:appcompat-v7:${project.SUPPORT_VERSION}"
     api "com.android.support:design:${project.SUPPORT_VERSION}"
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
 //删除生成的jar
 task clearJar(type: Delete) {
