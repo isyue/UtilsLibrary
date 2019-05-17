@@ -3,9 +3,9 @@ package com.coszero.utilslibrary.app;
 import android.app.Activity;
 import android.content.Context;
 
-import java.util.Stack;
-
 import com.coszero.utilslibrary.utils.LogX;
+
+import java.util.Stack;
 
 /**
  * @author jiyuren
@@ -149,7 +149,7 @@ public class AppManager {
      * 退出应用程序
      *
      * @param context
-     * @param code -1 为非正常退出
+     * @param code -1 为非正常退出 0
      */
     public void exitApp(Context context, int code) {
         try {

@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 /**
  * Toast工具类
+ * 最好在Application中初始化
  */
 public class ToastUtils {
 

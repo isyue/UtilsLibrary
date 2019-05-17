@@ -68,7 +68,7 @@ public abstract class LasyFragment extends Fragment implements View.OnClickListe
         LogX.e("LasyFragment", "状态为可见");
     }
 
-    protected void  onInvisible() {
+    protected void onInvisible() {
         LogX.e("LasyFragment", "状态为不可见");
     }
 

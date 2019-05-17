@@ -1,4 +1,4 @@
-package com.coszero.utilslibrary.utils;
+package com.coszero.utilslibrary.app;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -14,6 +14,9 @@ import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
+
+import com.coszero.utilslibrary.utils.LogX;
+import com.coszero.utilslibrary.utils.StringUtils;
 
 import java.io.File;
 import java.io.FileInputStream;

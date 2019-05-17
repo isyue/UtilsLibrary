@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.coszero.utilslibrary.app.AppManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,6 @@ import java.util.List;
 public abstract class BaseActivity extends AppCompatActivity {
     protected boolean isFrist = true;//判断数据是否第一次加载
     private String title;
-    private static List<BaseActivity> caches = new ArrayList<>();
     public static Class<?> currentActivity;
     /**
      * 用来标记同一生命周期
@@ -29,12 +30,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppManager.getAppManager().addActivity(this);
         setWantShowContentView(savedInstanceState);
         //setNavigationIcon需要放在 setSupportActionBar之后才会生效。
         //检查网络
         initView();
         initListener();
-        caches.add(this);
     }
 
     @Override
@@ -123,12 +124,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         win.setAttributes(winParams);
     }
 
-    public static void exit() {
-        for (BaseActivity cache : caches) {
-            cache.finish();
-        }
-        caches.clear();
-        System.exit(0);
+
+    /**
+     * 退出app
+     */
+    public void exit() {
+        AppManager.getAppManager().exitApp(getApplicationContext(), 0);
         System.out.println("#exit app");
+    }
+
+    @Override
+    protected void onDestroy() {
+        AppManager.getAppManager().removeActivity(this);
+        super.onDestroy();
     }
 }

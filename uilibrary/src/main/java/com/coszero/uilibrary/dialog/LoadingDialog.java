@@ -1,4 +1,4 @@
-package com.coszero.utilslibrary.utils;
+package com.coszero.uilibrary.dialog;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -8,13 +8,13 @@ import android.content.Context;
  * 只会在页面第一次请求时出现，需要再次出现，需要调用 reset()方法
  * Created by zhangfeng on 2015/12/8.
  */
-public class LoadingUtils {
+public class LoadingDialog {
     private ProgressDialog progressDialog;
     private Context context;
     private String content;
     private boolean isFirst = true;
 
-    public LoadingUtils(Context context, String content) {
+    public LoadingDialog(Context context, String content) {
         this.context = context;
         this.content = content;
     }
