@@ -25,6 +25,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api "com.android.support:appcompat-v7:${project.SUPPORT_VERSION}"
+    implementation project(path: ':utilslibrary')
 }
 
 //生成本地的maven仓库

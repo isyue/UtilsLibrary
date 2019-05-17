@@ -93,7 +93,7 @@ public class AlertDialog {
         return this;
     }
 
-    public AlertDialog setEditHintMsg(String msg){
+    public AlertDialog setEditHintMsg(String msg) {
         showEditText = true;
         if ("".equals(msg)) {
             edit_msg.setHint("内容");
@@ -185,15 +185,15 @@ public class AlertDialog {
 
         if (showPosBtn && showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-           // btn_pos.setBackgroundResource(R.drawable.ul_alertdialog_right_selector);
+            // btn_pos.setBackgroundResource(R.drawable.ul_alertdialog_right_selector);
             btn_neg.setVisibility(View.VISIBLE);
-           // btn_neg.setBackgroundResource(R.drawable.ul_alertdialog_left_selector);
+            // btn_neg.setBackgroundResource(R.drawable.ul_alertdialog_left_selector);
             img_line.setVisibility(View.VISIBLE);
         }
 
         if (showPosBtn && !showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-           // btn_pos.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            // btn_pos.setBackgroundResource(R.drawable.alertdialog_single_selector);
         }
 
         if (!showPosBtn && showNegBtn) {
@@ -206,6 +206,7 @@ public class AlertDialog {
         setLayout();
         dialog.show();
     }
+
     public void dismiss() {
         dialog.dismiss();
     }

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.coszero.utilslibrary.utils.LoadingUtils;
 import com.coszero.utilslibrary.utils.LogX;
 
 
@@ -18,14 +17,13 @@ import com.coszero.utilslibrary.utils.LogX;
  */
 public abstract class BaseFragment extends Fragment {
     public View view;
-    protected LoadingUtils loadingUtils;
     protected Context context;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        loadingUtils = new LoadingUtils(getActivity(), "请求中……");
         view = getView();
-        LogX.e("view","view");
+        LogX.e("view", "view");
         return view;
     }
 
