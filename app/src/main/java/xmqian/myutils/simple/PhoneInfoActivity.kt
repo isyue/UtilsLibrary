@@ -1,6 +1,7 @@
 package xmqian.myutils.simple
 
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 
@@ -25,7 +26,7 @@ class PhoneInfoActivity : ActivityBase() {
     override fun setWantShowContentView(savedInstanceState: Bundle) {
         setContentView(R.layout.activity_phone_info)
         ButterKnife.bind(this)
-        tvNetState = findViewById<View>(R.id.tv_netState)
+        tvNetState = findViewById<View>(R.id.tv_netState) as TextView?
 
         PhoneNetStateUtils.registerNetState(this) { netWorkState -> tvNetState!!.text = "当前网络状态：$netWorkState" }
     }
@@ -63,7 +64,7 @@ class PhoneInfoActivity : ActivityBase() {
         addInfo("Wifi信号强度值：" + PhoneNetStateUtils.getWifiState(this).toString())
     }
 
-    fun addInfo(infoValue: String) {
+    private fun addInfo(infoValue: String) {
         val textView = TextView(this)
         textView.text = infoValue
         layCOnten!!.addView(textView)

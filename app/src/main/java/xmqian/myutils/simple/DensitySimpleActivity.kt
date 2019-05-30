@@ -23,7 +23,7 @@ class DensitySimpleActivity : ActivityBase() {
     @Bind(R.id.tv_show_value)
     internal var tvShowValue: TextView? = null
 
-    val inputValue: Float
+    private val inputValue: Float
         get() = if (TextUtils.isEmpty(inputEditText!!.text!!.toString())) {
             0f
         } else {
@@ -39,7 +39,7 @@ class DensitySimpleActivity : ActivityBase() {
 
     }
 
-    fun setChangeValue(value: Int) {
+    private fun setChangeValue(value: Int) {
         tvShowValue!!.text = "转换后的值为：$value"
     }
 

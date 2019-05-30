@@ -45,7 +45,7 @@ class TimeSimpleActivity : ActivityBase() {
 
     }
 
-    fun addInfo(infoValue: String) {
+    private fun addInfo(infoValue: String) {
         val textView = TextView(this)
         textView.text = infoValue
         layContent!!.addView(textView)

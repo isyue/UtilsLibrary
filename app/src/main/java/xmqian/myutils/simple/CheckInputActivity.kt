@@ -1,8 +1,6 @@
 package xmqian.myutils.simple
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
 import xmqian.myutils.ActivityBase
 import xmqian.myutils.R
 

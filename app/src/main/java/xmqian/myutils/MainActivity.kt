@@ -20,7 +20,8 @@ import xmqian.myutils.simple.ToastActivity
 
 class MainActivity : AppCompatActivity() {
     private var items: List<String>? = null
-    var activitys: MutableList<Class<*>>
+    //可变列表
+    private lateinit var activitys: MutableList<Class<*>>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
