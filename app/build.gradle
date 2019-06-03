@@ -16,6 +16,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //使用了注解添加如下配置
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        //使用java8Lambda表达式增加如下配置
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
     buildTypes {
         release {
