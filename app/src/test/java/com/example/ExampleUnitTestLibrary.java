@@ -3,9 +3,6 @@ package com.example;
 import org.junit.Test;
 
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import kotlin.text.Regex;
 
 /**
  * @author xmqian
