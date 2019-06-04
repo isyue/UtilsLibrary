@@ -14,7 +14,7 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>My App Utils</groupId>
+      <groupId>Utils Application</groupId>
       <artifactId>UtilsLibrary</artifactId>
       <version>unspecified</version>
       <scope>compile</scope>

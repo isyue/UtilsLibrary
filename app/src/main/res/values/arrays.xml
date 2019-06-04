@@ -6,5 +6,6 @@
         <item>展示手机信息</item>
         <item>时间格式显示</item>
         <item>输入检查</item>
+        <item>碎片窗口测试</item>
     </string-array>
 </resources>

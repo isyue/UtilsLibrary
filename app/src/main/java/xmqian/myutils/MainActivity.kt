@@ -7,15 +7,10 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import xmqian.myutils.simple.*
 
 import java.util.ArrayList
 import java.util.Arrays
-
-import xmqian.myutils.simple.CheckInputActivity
-import xmqian.myutils.simple.DensitySimpleActivity
-import xmqian.myutils.simple.PhoneInfoActivity
-import xmqian.myutils.simple.TimeSimpleActivity
-import xmqian.myutils.simple.ToastActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         activitys.add(PhoneInfoActivity::class.java)
         activitys.add(TimeSimpleActivity::class.java)
         activitys.add(CheckInputActivity::class.java)
+        activitys.add(FragmentActivity::class.java)
     }
 
     private fun goActivity(activity: Class<*>) {

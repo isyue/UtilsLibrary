@@ -32,6 +32,8 @@ android {
 
 dependencies {
     //测试包测试
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
     debugImplementation project(path: ':utilslibrary')
     debugImplementation project(path: ':uilibrary')
     //正式包测试releaseImplementation

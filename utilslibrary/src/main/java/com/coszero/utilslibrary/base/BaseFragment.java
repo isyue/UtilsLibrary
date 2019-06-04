@@ -2,6 +2,7 @@ package com.coszero.utilslibrary.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,13 +23,17 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = getView();
-        LogX.e("view", "view");
-        return view;
+        try {
+            View layout = inflater.inflate(getLayoutResource(), container, false);
+            return layout;
+        } catch (Exception e) {
+            String errorMsg = "布局使用异常，移除类：" + this.getClass().getSimpleName() + " 异常布局ID:" + getLayoutResource() +
+                    " 异常信息：" + e.toString();
+            LogX.e("### BaseFragment", errorMsg);
+            new Throwable(errorMsg);
+        }
+        return null;
     }
-
-
-    public abstract View getView();
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -41,6 +46,11 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initView();
 
+    /**
+     * 返回布局ID
+     */
+    protected abstract @LayoutRes
+    int getLayoutResource();
 
     /**
      * 自动转控件类型
