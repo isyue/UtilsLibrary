@@ -15,6 +15,8 @@ import com.coszero.utilslibrary.utils.LogX;
 /**
  * Fragment的父类
  * Created by yue on 2016-05-23.
+ *
+ * @deprecated 没啥需要统一管理的，自己写吧
  */
 public abstract class BaseFragment extends Fragment {
     public View view;

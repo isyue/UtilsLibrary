@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CountDownTextView">
+        <attr name="is_Stroke" format="boolean" />
+        <attr name="stroke_Width" format="integer" />
+        <attr name="enable_Color" format="color" />
+        <attr name="disable_Color" format="color" />
+    </declare-styleable>
+</resources>

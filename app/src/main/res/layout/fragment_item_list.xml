@@ -6,7 +6,6 @@
     android:name="xmqian.myutils.simple.ItemFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     app:layoutManager="LinearLayoutManager"
     tools:context=".simple.ItemFragment"
     tools:listitem="@layout/fragment_item" />

@@ -21,7 +21,9 @@
         <activity android:name=".simple.PhoneInfoActivity" />
         <activity android:name=".simple.TimeSimpleActivity" />
         <activity android:name=".simple.CheckInputActivity"></activity>
-        <activity android:name=".simple.FragmentActivity" />
+        <activity
+            android:name=".simple.FragmentActivity"
+            android:theme="@style/AppThemeNoBar" />
     </application>
 
 </manifest>

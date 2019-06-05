@@ -26,6 +26,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api "com.android.support:appcompat-v7:${project.SUPPORT_VERSION}"
     implementation project(path: ':utilslibrary')
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
 }
 
 //生成本地的maven仓库

@@ -1,10 +1,12 @@
 package xmqian.myutils.simple
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-
+import android.support.v7.app.AppCompatActivity
+import android.view.View
+import butterknife.Bind
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.coszero.uilibrary.widget.CountDownTextView
 import com.coszero.utilslibrary.utils.ToastUtils
 import xmqian.myutils.R
 
@@ -19,6 +21,8 @@ class ToastActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_toast)
         ButterKnife.bind(this)
+        val countDownTextView = findViewById<CountDownTextView>(R.id.ctv_get_code) as CountDownTextView
+        countDownTextView?.setOnClickListener { countDownTextView?.startCountDown(59) }
     }
 
     @OnClick(R.id.textView2)
@@ -28,6 +32,7 @@ class ToastActivity : AppCompatActivity() {
         /*需要注册全局Context*/
         ToastUtils.showMsg("显示长时间显示" + index + "次")
     }
+
 
     @OnClick(R.id.textView3)
     fun showLongToast() {
