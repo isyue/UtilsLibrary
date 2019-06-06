@@ -32,6 +32,6 @@
         android:gravity="center"
         android:minWidth="70dp"
         android:text="获取验证码"
-        android:textColor="@color/colorOrange"
+        android:textColor="@color/ui_color_orange"
         android:textSize="13sp" />
 </LinearLayout>

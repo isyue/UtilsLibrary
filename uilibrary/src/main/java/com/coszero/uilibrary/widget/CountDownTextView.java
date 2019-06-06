@@ -58,7 +58,7 @@ public class CountDownTextView extends android.support.v7.widget.AppCompatTextVi
         /*这里从集合里取出相对应的属性值,第二参数是如果使用者没用配置该属性时所用的默认值*/
         mIsStroke = typeArray.getBoolean(R.styleable.CountDownTextView_is_Stroke, false);
         mStrokeWidth = typeArray.getInteger(R.styleable.CountDownTextView_stroke_Width, 2);
-        mNormalStrokeColor = typeArray.getColor(R.styleable.CountDownTextView_enable_Color, getResources().getColor(R.color.colorOrange));
+        mNormalStrokeColor = typeArray.getColor(R.styleable.CountDownTextView_enable_Color, getResources().getColor(R.color.ui_color_orange));
         mDisabledStrokeColor = typeArray.getColor(R.styleable.CountDownTextView_disable_Color, Color.parseColor("#BBBBBB"));
         init(context);
     }
