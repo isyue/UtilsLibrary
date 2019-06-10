@@ -18,14 +18,8 @@ import java.util.List;
  * Activity界面的父类
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    protected boolean isFrist = true;//判断数据是否第一次加载
-    private String title;
     public static Class<?> currentActivity;
-    /**
-     * 用来标记同一生命周期
-     */
-    private String tag = "";
-
+    private String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +27,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         AppManager.getAppManager().addActivity(this);
         setWantShowContentView(savedInstanceState);
         //setNavigationIcon需要放在 setSupportActionBar之后才会生效。
-        //检查网络
-        initView();
-        initListener();
     }
 
     @Override
@@ -48,63 +39,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 关联布局文件，设置标题
      */
     protected abstract void setWantShowContentView(Bundle savedInstanceState);
-
-    /**
-     * 初始化视图显示
-     */
-    protected abstract void initView();
-
-    /**
-     * 初始化监听
-     */
-    protected void initListener() {
-    }
-
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        boolean onKey = true;
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                return keyBack();
-            default:
-                onKey = super.onKeyDown(keyCode, event);
-                break;
-        }
-        return onKey;
-    }
-
-    public boolean keyBack() {
-        finish();
-        return true;
-    }
-
-    /**
-     * 自动转控件类型
-     *
-     * @param paramInt
-     * @param <V>
-     * @return
-     */
-    protected <V> V findView(int paramInt) {
-        return (V) this.findViewById(paramInt);
-    }
-
-    /**
-     * 自动转控件类型
-     *
-     * @param paramView
-     * @param paramInt
-     * @param <V>
-     * @return
-     */
-    protected <V> V findView(View paramView, int paramInt) {
-        return (V) paramView.findViewById(paramInt);
-    }
 
     /**
      * 隐藏状态栏开关
@@ -128,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 退出app
      */
-    public void exit() {
+    public void exitApp() {
         AppManager.getAppManager().exitApp(getApplicationContext(), 0);
         System.out.println("#exit app");
     }
