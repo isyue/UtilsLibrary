@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/q_footer"
     android:layout_width="match_parent"
-    android:layout_height="20dp"
+    android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
-    android:background="#c0c0c0"
-    android:orientation="horizontal"></LinearLayout>
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/text_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#A89797"
+        android:padding="10dp"
+        android:text="测试1"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/text1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_optimizationLevel="" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#994B4B"
+        android:text="约束的控件"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/text_start"
+        app:layout_constraintLeft_toRightOf="@id/text_start"
+        app:layout_constraintRight_toLeftOf="@+id/text2"
+        app:layout_constraintVertical_bias="1" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#994B4B"
+        android:text="约束的控件"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/text1"
+        app:layout_constraintLeft_toRightOf="@id/text1"
+        app:layout_constraintRight_toLeftOf="@id/text_end"
+        app:layout_constraintVertical_bias="1" />
+
+    <TextView
+        android:id="@+id/text_end"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="#994B4B"
+        android:text="约束的控件"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/text2"
+        app:layout_constraintLeft_toRightOf="@id/text2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="190dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="text1,text2" />
+</android.support.constraint.ConstraintLayout>
 
