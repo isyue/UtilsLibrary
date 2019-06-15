@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         addActivity()
         val listView = findViewById<View>(R.id.lv_list) as ListView
         listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, items!!)
-        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+        listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
             print("MainList  position:" + items!![position])
             goActivity(activitys[position])
         }
