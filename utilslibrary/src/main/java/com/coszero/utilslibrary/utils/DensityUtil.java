@@ -1,7 +1,6 @@
 package com.coszero.utilslibrary.utils;
 
 import android.content.Context;
-import android.util.TypedValue;
 
 /**
  * @author xmqian
