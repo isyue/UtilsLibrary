@@ -1,15 +1,10 @@
 package xmqian.myutils.simple
 
-import android.os.Bundle
-import android.view.View
-import android.widget.LinearLayout
 import android.widget.TextView
-
-import butterknife.Bind
-import butterknife.ButterKnife
 import com.coszero.utilslibrary.utils.PhoneInfoGetUtils
 import com.coszero.utilslibrary.utils.PhoneNetStateUtils
 import com.coszero.utilslibrary.utils.PhoneScreenInfoUtils
+import kotlinx.android.synthetic.main.activity_phone_info.*
 import xmqian.myutils.ActivityBase
 import xmqian.myutils.R
 
@@ -19,19 +14,12 @@ import xmqian.myutils.R
  * @desc 手机信息展示
  */
 class PhoneInfoActivity : ActivityBase() {
-    @Bind(R.id.lay_content)
-    internal var layCOnten: LinearLayout? = null
-    private var tvNetState: TextView? = null
-
-    override fun setWantShowContentView(savedInstanceState: Bundle) {
-        setContentView(R.layout.activity_phone_info)
-        ButterKnife.bind(this)
-        tvNetState = findViewById<View>(R.id.tv_netState) as TextView?
-
-        PhoneNetStateUtils.registerNetState(this) { netWorkState -> tvNetState!!.text = "当前网络状态：$netWorkState" }
+    override fun getLayoutId(): Int {
+        return R.layout.activity_phone_info
     }
 
     override fun initView() {
+        PhoneNetStateUtils.registerNetState(this) { netWorkState -> tv_netState!!.text = "当前网络状态：$netWorkState" }
         //屏幕密度
         addInfo("屏幕密度：" + PhoneScreenInfoUtils.getDensity(this).toString())
         //屏幕高度
@@ -67,7 +55,7 @@ class PhoneInfoActivity : ActivityBase() {
     private fun addInfo(infoValue: String) {
         val textView = TextView(this)
         textView.text = infoValue
-        layCOnten!!.addView(textView)
+        lay_content!!.addView(textView)
     }
 
     override fun onDestroy() {

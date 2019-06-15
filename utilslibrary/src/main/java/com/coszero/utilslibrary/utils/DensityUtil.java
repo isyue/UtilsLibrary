@@ -1,11 +1,12 @@
 package com.coszero.utilslibrary.utils;
 
 import android.content.Context;
+import android.util.TypedValue;
 
 /**
  * @author xmqian
  * @date 2018/5/25
- * @desc 密度单位转换
+ * @desc Android密度单位转换
  */
 public class DensityUtil {
 
@@ -15,6 +16,9 @@ public class DensityUtil {
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
+        /*系统转换方式*/
+//        float scale = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics());
+//        return (int) scale;
     }
 
     /**
@@ -35,6 +39,9 @@ public class DensityUtil {
     public static int sp2px(Context paramContext, float paramFloat) {
         float f = paramContext.getResources().getDisplayMetrics().scaledDensity;
         return (int) (paramFloat * f + 0.5F);
+        /*系统转换方式*/
+//        float scale = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, paramFloat, paramContext.getResources().getDisplayMetrics());
+//        return (int) scale;
     }
 
     /**

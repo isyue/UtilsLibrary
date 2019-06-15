@@ -14,10 +14,10 @@ class FragmentActivity : BaseActivity(), ItemFragment.OnListFragmentInteractionL
 
     override fun setWantShowContentView(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_fragment)
+        initView()
     }
 
-    override fun initView() {
-        val frameLayout = findView<FrameLayout>(R.id.frame_layout) as FrameLayout
+    fun initView() {
         supportFragmentManager.beginTransaction().replace(R.id.frame_layout, ItemFragment()).commit();
     }
 

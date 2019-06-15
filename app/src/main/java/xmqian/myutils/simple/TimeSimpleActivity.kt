@@ -1,16 +1,11 @@
 package xmqian.myutils.simple
 
-import android.os.Bundle
-import android.widget.LinearLayout
 import android.widget.TextView
-
-import java.util.Date
-
-import butterknife.Bind
-import butterknife.ButterKnife
 import com.coszero.utilslibrary.utils.TimeUtils
+import kotlinx.android.synthetic.main.activity_time_simple.*
 import xmqian.myutils.ActivityBase
 import xmqian.myutils.R
+import java.util.*
 
 /**
  * @author xmqian
@@ -18,14 +13,11 @@ import xmqian.myutils.R
  * @desc
  */
 class TimeSimpleActivity : ActivityBase() {
-    @Bind(R.id.lay_content)
-    internal var layContent: LinearLayout? = null
-    private val date: Date? = null
-
-    override fun setWantShowContentView(savedInstanceState: Bundle) {
-        setContentView(R.layout.activity_time_simple)
-        ButterKnife.bind(this)
+    override fun getLayoutId(): Int {
+        return R.layout.activity_time_simple
     }
+
+    private val date: Date? = null
 
     override fun initView() {
         //以默认格式获取系统时间
@@ -48,6 +40,6 @@ class TimeSimpleActivity : ActivityBase() {
     private fun addInfo(infoValue: String) {
         val textView = TextView(this)
         textView.text = infoValue
-        layContent!!.addView(textView)
+        lay_content!!.addView(textView)
     }
 }

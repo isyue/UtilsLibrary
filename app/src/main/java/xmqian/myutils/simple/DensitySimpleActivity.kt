@@ -1,14 +1,10 @@
 package xmqian.myutils.simple
 
-import android.os.Bundle
-import android.support.design.widget.TextInputEditText
 import android.text.TextUtils
-import android.widget.TextView
-
-import butterknife.Bind
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.coszero.utilslibrary.utils.DensityUtil
+import kotlinx.android.synthetic.main.activity_density_simple.*
 import xmqian.myutils.ActivityBase
 import xmqian.myutils.R
 
@@ -18,29 +14,25 @@ import xmqian.myutils.R
  * @desc 测试密度转换
  */
 class DensitySimpleActivity : ActivityBase() {
-    @Bind(R.id.edit_input)
-    internal var inputEditText: TextInputEditText? = null
-    @Bind(R.id.tv_show_value)
-    internal var tvShowValue: TextView? = null
-
-    private val inputValue: Float
-        get() = if (TextUtils.isEmpty(inputEditText!!.text!!.toString())) {
-            0f
-        } else {
-            java.lang.Float.valueOf(inputEditText!!.text!!.toString())
-        }
-
-    override fun setWantShowContentView(savedInstanceState: Bundle) {
-        setContentView(R.layout.activity_density_simple)
-        ButterKnife.bind(this)
+    override fun getLayoutId(): Int {
+        return R.layout.activity_density_simple
     }
 
-    override fun initView() {
 
+    private val inputValue: Float
+        get() = if (TextUtils.isEmpty(edit_input!!.text!!.toString())) {
+            0f
+        } else {
+            java.lang.Float.valueOf(edit_input!!.text!!.toString())
+        }
+
+    override fun initView() {
+        ButterKnife.bind(this)
+        dd_text.setPadding(0, 0, DensityUtil.dip2px(this, 16f), 0)
     }
 
     private fun setChangeValue(value: Int) {
-        tvShowValue!!.text = "转换后的值为：$value"
+        tv_show_value!!.text = "转换后的值为：$value"
     }
 
 

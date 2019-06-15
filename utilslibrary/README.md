@@ -32,15 +32,6 @@ ViewPager的父Adapter类
 - **[Utils——杂项工具类](https://gitee.com/xmqian/UtilsLibrary/wikis/Utils?parent=utils)**
 - **[PhoneInfoGetUtils——手机信息获取](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneInfoGetUtils?parent=utils)**
 - **[PhoneNetStateUtils——手机网络状态获取](https://gitee.com/xmqian/UtilsLibrary/wikis/PhoneNetStateUtils?parent=utils)**
-#### view——自定义View
-- **AlertDialog**
-- **ContainsEnojiEditText**
-- **ProgressWebView**
+- **KeyBoardUtils——软键盘控制隐藏显示**
 
-#### widget——自定义控件
-- **CircleTextView**
-- **ContainEmojiEditText**
-- **HomeGridView**
-- **WrapConternHeightViewPager**
-- **WrapListView**
 

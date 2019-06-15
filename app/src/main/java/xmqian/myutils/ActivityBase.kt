@@ -11,11 +11,16 @@ import com.coszero.utilslibrary.base.BaseActivity
  * @desc
  */
 abstract class ActivityBase : BaseActivity() {
-    abstract override fun setWantShowContentView(savedInstanceState: Bundle)
-    abstract override fun initView()
+    override fun setWantShowContentView(savedInstanceState: Bundle?) {
+        setContentView(getLayoutId())
+        initView()
+    }
 
+    abstract fun initView()
     override fun onDestroy() {
         super.onDestroy()
         ButterKnife.unbind(this)
     }
+
+    protected abstract fun getLayoutId(): Int
 }
