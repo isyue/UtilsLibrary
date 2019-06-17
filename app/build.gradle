@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
@@ -40,7 +42,8 @@ dependencies {
 //    releaseImplementation 'com.coszero:UiLibrary:1.1.0'
 //    releaseImplementation 'com.coszero:UtilsLibrary:1.1.0'
     /*注解*/
-    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
     //单元测试类
     testImplementation 'junit:junit:4.12'
     //添加Android测试支持库

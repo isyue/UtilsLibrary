@@ -17,10 +17,5 @@ abstract class ActivityBase : BaseActivity() {
     }
 
     abstract fun initView()
-    override fun onDestroy() {
-        super.onDestroy()
-        ButterKnife.unbind(this)
-    }
-
     protected abstract fun getLayoutId(): Int
 }
