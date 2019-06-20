@@ -1,4 +1,7 @@
-#### 项目介绍
+# 项目介绍
+## 分支介绍
+- v_1.0 Java分支
+- v_2.0 代码转为Kotlin
 > 收集一些常用的代码片段，进行整理。  
 [Git上别人整理的链接](https://github.com/Blankj/AndroidUtilCode)
 - utilslibrary 工具类包，没有资源文件，使用gradle命令进行jar构建使用
