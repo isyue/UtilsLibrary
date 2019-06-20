@@ -27,3 +27,8 @@
     </dependency>
   </dependencies>
 </project>
+<repository>
+ <id>xwintop-maven</id>
+  <url>https://gitee.com/xmqian/UtilsLibrary/raw/master/repository</url>
+   </repository>
+    </repositories>
