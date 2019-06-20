@@ -36,11 +36,11 @@ dependencies {
     //测试包测试
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation project(path: ':utilslibrary')
-    implementation project(path: ':uilibrary')
+//    implementation project(path: ':utilslibrary')
+//    implementation project(path: ':uilibrary')
     //正式包测试releaseImplementation
-//    implementation 'com.coszero:UiLibrary:1.1.0'
-//    implementation 'com.coszero:UtilsLibrary:1.1.0'
+    implementation 'com.coszero:UiLibrary:1.1.0'
+    implementation 'com.coszero:UtilsLibrary:1.1.0'
     /*注解*/
     implementation 'com.jakewharton:butterknife:8.8.1'
     kapt 'com.jakewharton:butterknife-compiler:8.8.1'
