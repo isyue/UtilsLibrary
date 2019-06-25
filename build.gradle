@@ -22,12 +22,14 @@ buildscript {
 
 allprojects {
     repositories {
+//        maven {
+////            url 'https://gitee.com/xmqian/UtilsLibrary/raw/master/repository'
+//            //使用本地
+//            url 'file://C://maven//repository'
+//        }
+        mavenLocal()
         google()
         jcenter()
-//        添加自己的Github仓库
-        maven {
-            url 'https://gitee.com/xmqian/UtilsLibrary/raw/master/repository'
-        }
     }
 }
 

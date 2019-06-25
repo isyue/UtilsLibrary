@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 //maven插件
 apply plugin: 'maven'
+//Jcenter插件
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
 
@@ -33,7 +35,8 @@ dependencies {
 uploadArchives {
     repositories.mavenDeployer {
 // 配置本地仓库路径，项目根目录下的repository目录中
-        repository(url: uri('../repository'))
+//        repository(url: uri('../repository'))
+        repository(url: uri('C:/maven/repository'))
         pom.groupId = "com.coszero"
 // 唯一标识（通常为模块包名，也可以任意）
         pom.artifactId = "UiLibrary"
@@ -41,4 +44,13 @@ uploadArchives {
         pom.version = project.VERSION_NAME
 // 版本号
     }
+}
+//上传代码到远程maven仓库（未测试通过）
+publish {
+    userOrg = 'xmqian'//bintray账户下某个组织id
+    groupId = 'com.coszero'//maven仓库下库的包名,一般为模块包名
+    artifactId = 'UiLibrary'//项目名称
+    publishVersion = '1.1.0'//项目版本号
+    desc = 'this is utils'//项目介绍，可不写
+    website = ''//项目主页，可以不写
 }
